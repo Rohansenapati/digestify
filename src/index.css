@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 220 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 220 70% 97%;
+    --accent-foreground: 220 75% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 92%;
+    --input: 220 20% 92%;
+    --ring: 220 75% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 border border-white/20 shadow-sm;
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  /* Custom focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Animated underline for links */
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+  
+  /* Fade-in animation for content */
+  .content-fade-in > * {
+    @apply animate-fade-in;
+    animation-fill-mode: both;
+  }
+  
+  .content-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
+  .content-fade-in > *:nth-child(2) { animation-delay: 0.2s; }
+  .content-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
+  .content-fade-in > *:nth-child(4) { animation-delay: 0.4s; }
+  .content-fade-in > *:nth-child(5) { animation-delay: 0.5s; }
+  .content-fade-in > *:nth-child(6) { animation-delay: 0.6s; }
+}
