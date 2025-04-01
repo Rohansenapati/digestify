@@ -52,24 +52,7 @@ const Header = ({ isAuthenticated = false, onLogout = () => {} }: HeaderProps) =
           >
             Home
           </Link>
-          <Link 
-            to="/features" 
-            className={cn(
-              "link-underline focus-ring font-medium",
-              location.pathname === "/features" ? "text-primary" : "text-foreground/70 hover:text-foreground"
-            )}
-          >
-            Features
-          </Link>
-          <Link 
-            to="/about" 
-            className={cn(
-              "link-underline focus-ring font-medium",
-              location.pathname === "/about" ? "text-primary" : "text-foreground/70 hover:text-foreground"
-            )}
-          >
-            About
-          </Link>
+          
           
           {isAuthenticated ? (
             <div className="flex items-center space-x-6">
